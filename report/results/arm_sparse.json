@@ -1,0 +1,31 @@
+{
+  "job": "arm_sparse",
+  "env_id": "TwoLinkReachSparse-v0",
+  "algo": "SAC",
+  "timesteps": 30000,
+  "train_seconds": 387.9,
+  "random": {
+    "success_rate": 0.02,
+    "return_mean": -24.81,
+    "return_std": 0.673721010508059,
+    "final_dist_mean": 0.25230196940553784,
+    "ep_len_mean": 25.0,
+    "n": 100
+  },
+  "mine": {
+    "success_rate": 0.02,
+    "return_mean": -24.59,
+    "return_std": 1.562657992012328,
+    "final_dist_mean": 0.1951512393420296,
+    "ep_len_mean": 25.0,
+    "n": 100
+  },
+  "course_pretrained": {
+    "success_rate": 0.01,
+    "return_mean": -24.59,
+    "return_std": 2.0400735280866718,
+    "final_dist_mean": 0.15061212287066014,
+    "ep_len_mean": 25.0,
+    "n": 100
+  }
+}

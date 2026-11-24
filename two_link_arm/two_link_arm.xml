@@ -1,0 +1,26 @@
+<mujoco model="two_link_arm">
+    <compiler angle="radian" eulerseq="XYZ" inertiafromgeom="false" />
+    <option timestep="0.002" integrator="implicitfast" />
+    <asset>
+        <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="upper_arm_1" file="meshes/upper_arm_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="forearm_1" file="meshes/forearm_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <body name="base_link" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" />
+            <inertial mass="0.21312564561953157" pos="0.0 -5.654319433712919e-18 0.02" fullinertia="0.0001136670109970799 0.00011366701099708467 0.00017050051649562288 0.0 0.0 -6.018531076210112e-36" />
+            <body name="upper_arm_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                <joint name="joint1" type="hinge" axis="0.0 0.0 1.0" pos="0.0 0.0 0.04" />
+                <geom name="upper_arm_1_geom" type="mesh" mesh="upper_arm_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" />
+                <inertial mass="0.08278904771821749" pos="0.07500000000000001 -1.819504682477395e-18 0.0475" fullinertia="7.550741078866263e-06 0.00021029288449383966 0.0002147390362832727 -1.1297629498585595e-20 0.0 -4.1424641494813846e-21" />
+                <body name="forearm_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                    <joint name="joint2" type="hinge" axis="0.0 0.0 1.0" pos="0.15 0.0 0.055" range="-2.617994 2.617994" limited="true" />
+                    <geom name="forearm_1_geom" type="mesh" mesh="forearm_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" />
+                    <inertial mass="0.04238799243172734" pos="0.21 1.7768600414818317e-18 0.061" fullinertia="2.4742268367229116e-06 6.890877239094191e-05 7.036568740930327e-05 9.791278898774177e-21 -1.0842021724855044e-19 -2.5607960196794024e-21" />
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

@@ -1,0 +1,31 @@
+{
+  "job": "arm_dense",
+  "env_id": "TwoLinkReach-v0",
+  "algo": "SAC",
+  "timesteps": 30000,
+  "train_seconds": 362.0,
+  "random": {
+    "success_rate": 0.02,
+    "return_mean": -32.56520534571083,
+    "return_std": 14.497272425574051,
+    "final_dist_mean": 0.25230196940553784,
+    "ep_len_mean": 25.0,
+    "n": 100
+  },
+  "mine": {
+    "success_rate": 0.8,
+    "return_mean": 7.2114324579009015,
+    "return_std": 9.986029777878958,
+    "final_dist_mean": 0.015548617097278061,
+    "ep_len_mean": 25.0,
+    "n": 100
+  },
+  "course_pretrained": {
+    "success_rate": 0.73,
+    "return_mean": 6.522921034316173,
+    "return_std": 10.260814898688146,
+    "final_dist_mean": 0.016425879909783687,
+    "ep_len_mean": 25.0,
+    "n": 100
+  }
+}

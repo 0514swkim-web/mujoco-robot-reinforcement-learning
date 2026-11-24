@@ -1,0 +1,20 @@
+<mujoco model="ball_beam">
+    <compiler angle="radian" eulerseq="XYZ" inertiafromgeom="false" />
+    <option timestep="0.002" integrator="implicitfast" />
+    <asset>
+        <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="beam_1" file="meshes/beam_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <body name="base_link" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" />
+            <inertial mass="0.24803999999999998" pos="0.0 0.0 0.015320512820512822" fullinertia="0.0002734015192307692 0.0011417535192307692 0.001088408 0.0 0.0 0.0" />
+            <body name="beam_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                <joint name="beam_joint" type="hinge" axis="0.0 1.0 0.0" pos="0.0 0.0 0.123" range="-0.261799 0.261799" limited="true" />
+                <geom name="beam_1_geom" type="mesh" mesh="beam_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" />
+                <inertial mass="0.1865600000000001" pos="0.0 0.0 0.12172727272727273" fullinertia="3.881321696969694e-05 0.0024925012169696977 0.002521245333333334 0.0 -1.4460965758189557e-19 6.025402399245649e-21" />
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

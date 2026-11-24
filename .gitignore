@@ -1,0 +1,45 @@
+# 올릴 파일만 골라서 허용 (나머지는 로컬에만 보관)
+/*
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/docs/
+
+# 로봇 모델 (Fusion export 원본 + 완성한 scene)
+!/ball_beam/
+!/two_link_arm/
+!/diff_drive/
+
+# 학습 환경과 실행 스크립트
+!/ball_beam_env.py
+!/two_link_arm_env.py
+!/diff_drive_env.py
+!/view_ball_beam.py
+!/view_two_link_arm.py
+!/view_diff_drive.py
+!/train_ball_beam.py
+!/train_ball_beam_alive.py
+!/train_diff_drive.py
+!/train_two_link_arm.py
+!/train_two_link_arm_sparse.py
+!/train_two_link_arm_her.py
+!/play_ball_beam.py
+!/play_two_link_arm.py
+!/play_two_link_arm_her.py
+!/play_diff_drive.py
+
+# 실험 결과
+!/report/
+/report/*
+!/report/tools/
+/report/tools/*
+!/report/tools/train_eval.py
+!/report/tools/make_figures.py
+!/report/models/
+!/report/logs/
+!/report/results/
+!/report/figures/
+!/report/captures/
+
+__pycache__/
+*.pyc

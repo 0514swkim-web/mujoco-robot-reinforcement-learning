@@ -1,0 +1,31 @@
+{
+  "job": "diff_drive",
+  "env_id": "DiffDriveGoal-v0",
+  "algo": "PPO",
+  "timesteps": 100000,
+  "train_seconds": 170.6,
+  "random": {
+    "success_rate": 0.0,
+    "return_mean": -10.310338950496023,
+    "return_std": 1.8435808761547965,
+    "final_dist_mean": 0.9093197767403924,
+    "ep_len_mean": 200.0,
+    "n": 100
+  },
+  "mine": {
+    "success_rate": 1.0,
+    "return_mean": 16.13207876966105,
+    "return_std": 2.9121021901697643,
+    "final_dist_mean": 0.08817800472468507,
+    "ep_len_mean": 35.38,
+    "n": 100
+  },
+  "course_pretrained": {
+    "success_rate": 1.0,
+    "return_mean": 16.131981283157753,
+    "return_std": 2.923693809657354,
+    "final_dist_mean": 0.08898775337501413,
+    "ep_len_mean": 35.22,
+    "n": 100
+  }
+}

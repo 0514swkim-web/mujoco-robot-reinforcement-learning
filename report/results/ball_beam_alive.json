@@ -1,0 +1,31 @@
+{
+  "job": "ball_beam_alive",
+  "env_id": "BallBeamAlive-v0",
+  "algo": "PPO",
+  "timesteps": 200000,
+  "train_seconds": 305.9,
+  "random": {
+    "success_rate": 0.0,
+    "return_mean": 100.29,
+    "return_std": 70.45712100277728,
+    "final_dist_mean": 0.21079450807890435,
+    "ep_len_mean": 100.29,
+    "n": 100
+  },
+  "mine": {
+    "success_rate": 0.15,
+    "return_mean": 250.0,
+    "return_std": 0.0,
+    "final_dist_mean": 0.07060653130262243,
+    "ep_len_mean": 250.0,
+    "n": 100
+  },
+  "course_pretrained": {
+    "success_rate": 0.2,
+    "return_mean": 250.0,
+    "return_std": 0.0,
+    "final_dist_mean": 0.05230455014049398,
+    "ep_len_mean": 250.0,
+    "n": 100
+  }
+}

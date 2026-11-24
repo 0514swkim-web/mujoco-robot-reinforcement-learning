@@ -1,0 +1,46 @@
+<mujoco model="ball_beam">
+    <!-- ball_beam.xml (Fusion 에서 내보낸 원본) 을 복사한 파일.
+         원본은 그대로 두고, 여기에 "학생 추가" 표시가 있는 줄만 더함 -->
+    <compiler angle="radian" eulerseq="XYZ" inertiafromgeom="false" />
+    <option timestep="0.002" integrator="implicitfast" />
+    <asset>
+        <mesh name="base_link" file="meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        <mesh name="beam_1" file="meshes/beam_1.stl" scale="0.001 0.001 0.001" />
+    </asset>
+    <worldbody>
+        <light directional="true" pos="-0.5 0.5 3" dir="0 0 -1" />
+        <body name="base_link" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+            <!-- [학생 추가 0] (선택) geom 줄 끝에 rgba 를 넣어 색 바꾸기 -->
+            <geom name="base_link_geom" type="mesh" mesh="base_link" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" rgba="0.35 0.35 0.4 1" />
+            <inertial mass="0.24803999999999998" pos="0.0 0.0 0.015320512820512822" fullinertia="0.0002734015192307692 0.0011417535192307692 0.001088408 0.0 0.0 0.0" />
+            <body name="beam_1" pos="0.0 0.0 0.0" euler="0.0 -0.0 0.0">
+                <joint name="beam_joint" type="hinge" axis="0.0 1.0 0.0" pos="0.0 0.0 0.123" range="-0.261799 0.261799" limited="true" />
+                <geom name="beam_1_geom" type="mesh" mesh="beam_1" pos="0 0 0" euler="0 0 0" contype="0" conaffinity="0" group="2" rgba="0.55 0.7 0.9 1" />
+                <inertial mass="0.1865600000000001" pos="0.0 0.0 0.12172727272727273" fullinertia="3.881321696969694e-05 0.0024925012169696977 0.002521245333333334 0.0 -1.4460965758189557e-19 6.025402399245649e-21" />
+
+                <!-- ===== [학생 추가 1] beam 충돌 상자 3개 + 목표 표시 (beam_1 body 안) ===== -->
+                <geom name="beam_col" type="box" size="0.2 0.02 0.004" pos="0 0 0.119" group="3" />
+                <geom name="rail_l_col" type="box" size="0.2 0.0025 0.006" pos="0 0.0175 0.129" group="3" />
+                <geom name="rail_r_col" type="box" size="0.2 0.0025 0.006" pos="0 -0.0175 0.129" group="3" />
+                <site name="target" type="box" size="0.003 0.028 0.0015" pos="0 0 0.1365" rgba="0.1 0.9 0.2 1" />
+            </body>
+        </body>
+
+        <!-- ===== [학생 추가 2] 바닥 + 공 (worldbody 안) ===== -->
+        <geom name="floor" type="plane" size="2 2 0.05" material="grid" />
+        <body name="ball" pos="0 0 0.138">
+            <freejoint name="ball_joint" />
+            <geom name="ball_geom" type="sphere" size="0.015" rgba="1 0.5 0.1 1" />
+            <inertial pos="0 0 0" mass="0.03" diaginertia="2.7e-6 2.7e-6 2.7e-6" />
+        </body>
+    </worldbody>
+
+    <!-- ===== [학생 추가 3] 바닥 무늬 + beam 위치 제어 모터 ===== -->
+    <asset>
+        <texture name="grid" type="2d" builtin="checker" rgb1="0.25 0.3 0.35" rgb2="0.2 0.24 0.28" width="300" height="300" />
+        <material name="grid" texture="grid" texrepeat="10 10" />
+    </asset>
+    <actuator>
+        <position name="beam_motor" joint="beam_joint" kp="10" kv="0.3" ctrlrange="-0.2618 0.2618" />
+    </actuator>
+</mujoco>
