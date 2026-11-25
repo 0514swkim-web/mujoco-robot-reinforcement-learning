@@ -4,7 +4,7 @@ Fusion 360에서 만든 로봇 3종을 MuJoCo 시뮬레이션으로 옮기고, S
 
 | 항목 | 내용 |
 | --- | --- |
-| 기간 | 2026.10 ~ 2026.11 (드론 및 로봇공학 수업 실습, 개인) |
+| 기간 | 2026.10 ~ 2026.11 (드론과 로보틱스 수업 실습, 개인) |
 | 로봇 | Ball & Beam, 2-Link Arm, Differential Drive |
 | 도구 | Fusion 360, ACDC4Robot 1.1.1, MuJoCo 3.12.0, Gymnasium 1.4.0, Stable-Baselines3 2.9.0 |
 | 결과 | 학습 후 성공률 80~100% (각 100 에피소드 평가) |
